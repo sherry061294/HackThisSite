@@ -1,0 +1,99 @@
+Here are the Solutions for the Basic Level in the HACKTHISSITE.org challenge
+
+1> Inspect the HTML Code, And search for the keyword "Password". it will be one of the results of the search.
+<--  the first few levels are extremely easy: password is 0a865b03 -->
+
+2> Just leave the password field empty, Done.
+
+3> Right click around the left of the password box and inspect element. there is a hidden input box, that submits the file to password.php
+   add password.php to the end of the current link, you will be redirected to a file with the unencrypted password.
+   
+   <form action="/missions/basic/3/index.php" method="post">
+   <input type="hidden" name="file" value="password.php" />
+   
+   use URL https://www.hackthissite.org/missions/basic/3/password.php
+
+   password 77498e63
+
+4> Right click on the button that sends the password to SAM.
+   replace email ID mentioned in the post command, and click the button.
+   you will get an email that has the password.
+   NOTE : You must provide the same email with which you are registered.
+
+    <form action="/missions/basic/4/level4.php" method="post">
+    <input type="hidden" name="to" value="sam@hackthissite.org">
+    <input type="submit" value="Send password to Sam"></form></center>
+
+5> Similar to 4. Follow the same steps.
+   only a slight difference in the code exists, the file is not called password.php
+   
+   <center>
+    <form action="/missions/basic/5/level5.php" method="post">
+    <input type="hidden" name="to" value="sam@hackthissite.org">
+    <input type="submit" value="Send password to Sam"></form></center>
+
+
+6> The Encrypted password is bb6diijm.
+   put an input of aa1aaaaa to encryption calculator.
+   you will notice an output of ab3defgh
+   i.e first remains the same, second increases by 1, third increases by 2, etc.
+   therefore the solution is ba4aeddf
+
+7> This level uses a perl script.The admin has created a perl file, that runs the CAL command.we can use '&&' command and attach an 'ls' command, to the end of it.
+   This allows us to list the directory and find the obfuscated password file.
+   
+   2019 && ls
+
+   This lists the entire 2019 calendar, after which it lists the directory. 
+   index.php
+   level7.php
+   cal.pl
+.  k1kh31b1n55h.php
+
+   go to the https://www.hackthissite.org/missions/basic/7/k1kh31b1n55h.php
+   
+8> In this the creator uses PHP variables in the back end. We can tell this by the input type used and the script the control is returning to.
+   <form action="/missions/basic/8/level8.php" method="post">
+   <input type="text" name="name">
+   <input type="submit" value="submit"></form>
+   
+   That means we can submit a command to execute Shell commands in place of the variable.
+   <!--#exec cmd="ls ../" -->
+   This creates a file with the name That is the list of all files in the directory.
+   
+   Your file has been saved. Please click here view the file.
+   
+   Hi, au12ha39vc.php index.php level8.php tmp! Your name contains 39 characters.
+   Visit au12ha39vc.php to et the password.
+
+9> use the site for problem 8. specify the command but alter it to point to the directory for example 9.
+   <!--#exec cmd="ls ../../9" --> 
+   this lists all directories in 9.
+   Your file has been saved. Please click here view the file.
+   Hi, index.php p91e283zc3.php! Your name contains 24 characters.  
+   Visit p91e283zc3.php.
+   You will get the password.
+
+10> So 10, is similar to 9 & 8, but the same command will not work as the admin has now protected against it.
+    Notice that when you click on submit, with any password, we get, you are not authorised to view this page notice.
+    This is done using a Cookie, that has authorisation set to no.
+    Change that to yes and reload the page!
+    You're in.
+
+11> This one is the most fun!
+    When we click on the link for excerscise 11, it just displays a Statement that mentions a song.
+    upon Refreshing, you get a new song, and another new song. A pattern here is that all the songs are by elton john.
+    so at the end of the url append an 'e'. And viola, you have the Parent diectory listed.
+    follow the trail of letters that spells out e l t o n. and you will find yourself in a blank directory. 
+    Here you can use .htaccess at the end of the url. This gives you a listing called DaAnswer.
+    This results in the following message being printed.
+    The answer is not what you think! Just look a little harder.
+    as the statement says,
+    not what you think - is the password.
+    
+
+
+
+
+
+
